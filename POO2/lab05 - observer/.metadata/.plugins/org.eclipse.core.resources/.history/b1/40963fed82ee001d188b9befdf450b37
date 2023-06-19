@@ -1,0 +1,16 @@
+import Observer;
+
+public class Aeroporto implements Observer {
+
+    private PrevisaoTempo previsaoTempo;
+
+    public Aeroporto(PrevisaoTempo previsaoTempo) {
+        this.previsaoTempo = previsaoTempo;
+    }
+
+    @Override
+    public void atualizar(double temperatura, double umidade, boolean chuva, double velocidadeVento) {
+        System.out.println("----- AEROPORTO -----");
+        System.out.println("Velocidade do vento: " + velocidadeVento + " km/h");
+    }
+}

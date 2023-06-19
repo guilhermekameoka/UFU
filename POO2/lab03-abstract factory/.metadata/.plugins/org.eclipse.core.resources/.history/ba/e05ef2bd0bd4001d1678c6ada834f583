@@ -1,0 +1,24 @@
+package factory;
+
+public interface Motor {
+    String getDescricao();
+}
+
+public class MotorChevrolet implements Motor {
+    public String getDescricao() {
+        return "Motor Chevrolet";
+    }
+}
+
+public class MotorFiat implements Motor {
+    public String getDescricao() {
+        return "Motor Fiat";
+    }
+}
+
+public class MotorFord implements Motor {
+    public String getDescricao() {
+        return "Motor Ford";
+    }
+}
+

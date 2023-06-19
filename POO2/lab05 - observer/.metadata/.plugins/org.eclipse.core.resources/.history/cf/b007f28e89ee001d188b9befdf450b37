@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+interface Observer {
+    void update(int temperatura, int umidade, boolean chuva, int velocidadeVento);
+}
+
+interface Observable {
+    void addObserver(Observer observer);
+    void removeObserver(Observer observer);
+    void notifyObservers();
+}
+
+class PrevisaoTempo implements Observable {
+    private int temperatura;
+    private int umidade;
+    private boolean chuva;
+    private int velocidadeVento;
+    private List<Observer> observers;
+    private Random random;
+
+    public PrevisaoTempo() {
+        this.observers = new ArrayList<>();
+        this.random = new Random();
+    }
+
+    public void iniciar() {
+        while (true) {
+            atualizarEstado();
+            notifyObservers();
+            try {
+                Thread.sleep(5000); // aguarda 5 segundos
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void atualizarEstado() {
+        this.temperatura = random.nextInt(40) - 10; // temperatura entre -10°C e 30°C
+        this.umidade = random.nextInt(100); // umidade entre 0% e 100%
+        this.chuva = random.nextBoolean(); // chuva com probabilidade de 50%
+        this.velocidadeVento = random.nextInt(100); // velocidade do vento entre 0 km/h e 100 km/h
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+        this.observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        this.observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(temperatura, umidade, chuva, velocidadeVento);
+        }
+    }
+}

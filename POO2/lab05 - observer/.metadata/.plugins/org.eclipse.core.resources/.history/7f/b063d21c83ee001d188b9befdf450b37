@@ -1,0 +1,19 @@
+package Observer;
+import Observer;
+
+public class Jornal implements Observer {
+
+    private PrevisaoTempo previsaoTempo;
+
+    public Jornal(PrevisaoTempo previsaoTempo) {
+        this.previsaoTempo = previsaoTempo;
+    }
+
+    @Override
+    public void atualizar(double temperatura, double umidade, boolean chuva, double velocidadeVento) {
+        System.out.println("----- JORNAL -----");
+        System.out.println("Temperatura: " + temperatura + " graus Celsius");
+        System.out.println("Umidade: " + umidade + "%");
+        System.out.println("Chuva: " + (chuva ? "Sim" : "Não"));
+    }
+}

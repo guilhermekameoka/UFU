@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class Main {
+   public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      PersonagemBuilder builder = new PersonagemBuilder();
+      boolean criandoPersonagem = false;
+
+      while (true) {
+         System.out.println("Escolha uma opção:");
+         System.out.println("1. Criar novo personagem");
+         System.out.println("2. Digitar nome");
+         System.out.println("3. Selecionar profissão");
+         System.out.println("4. Selecionar arma");
+         System.out.println("5. Finalizar construção");
+
+         int opcao = scanner.nextInt();
+         scanner.nextLine(); // limpa o buffer do scanner
+
+         switch (opcao) {
+            case 1:
+               builder.criarNovoPersonagem();
+               criandoPersonagem = true;
+               break;
+            case 2:
+               if (criandoPersonagem) {
+                  System.out.println("Digite o nome do personagem:");
+                  String nome = scanner.nextLine();
+                  builder.comNome(nome);
+               } else {
+                  System.out.println("Crie um novo personagem primeiro!");
+               }
+               break;
+            case 3:
+               if (criandoPersonagem) {
+                  System.out.println("Selecione a profissão do personagem:");
+                  String profissao = scanner.nextLine();
+                  builder.comProfissao(profissao);
+               } else {
+                  System.out.println("Crie um novo personagem primeiro!");
+               }
+               break;
+            case 4:
+               if (criandoPersonagem) {
+                  System.out.println("Selecione a arma do personagem:");
+                  String arma = scanner.nextLine();
+                  builder.comArma(arma);
+               } else {
+                  System.out.println("Crie um novo personagem primeiro!");
+               }
+               break;
+            case 5:
+               if (criandoPersonagem) {
+                  Personagem personagem = builder.build();
+                  System.out.println("Personagem criado!");
+                  System.out.println("Nome: " + personagem.getNome());
+                  System.out.println("Profissão: " + personagem.getProfissao());
+                  System.out.println("Arma: " + personagem.getArma());
+                  criandoPersonagem = false;
+               } else {
+                  System.out.println("Crie um novo personagem primeiro!");
+               }
+               break;
+            default:
+               System.out.println("Opção inválida!");
+               break;
+         }
+      }
+   }
+}

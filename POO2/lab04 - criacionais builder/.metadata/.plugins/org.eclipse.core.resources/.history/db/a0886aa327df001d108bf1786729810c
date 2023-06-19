@@ -1,0 +1,44 @@
+package builder;
+
+public class PersonagemBuilder {
+	   private String nome;
+	   private String profissao;
+	   private String arma;
+
+	   public void criarNovoPersonagem() {
+	      this.nome = "";
+	      this.profissao = "";
+	      this.arma = "";
+	   }
+
+	   public void comNome(String nome) {
+	      this.nome = nome;
+	   }
+
+	   public void comProfissao(String profissao) {
+	      this.profissao = profissao;
+	   }
+
+	   public void comArma(String arma) {
+	      this.arma = arma;
+	   }
+
+	   public Personagem build() {
+	      return new Personagem(nome, profissao, arma);
+	   }
+	   
+	   public PersonagemBuilder setArma(String arma) {
+		    this.arma = arma;
+		    return this;
+		}
+	   
+	   public PersonagemBuilder setNome(String nome) {
+		    this.nome = nome;
+		    return this;
+		}
+
+		public PersonagemBuilder setProfissao(String profissao) {
+		    this.profissao = profissao;
+		    return this;
+		}
+	}

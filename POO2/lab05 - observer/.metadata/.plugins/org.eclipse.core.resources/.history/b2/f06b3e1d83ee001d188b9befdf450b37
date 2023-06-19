@@ -1,0 +1,83 @@
+package Observer;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        PrevisaoTempo previsaoTempo = new PrevisaoTempo();
+        previsaoTempo.adicionarObserver(new Jornal(previsaoTempo));
+        previsaoTempo.adicionarObserver(new Agricultor(previsaoTempo));
+        previsaoTempo.adicionarObserver(new Aeroporto(previsaoTempo));
+
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+
+        do {
+            System.out.println("Escolha uma opção:");
+            System.out.println("1. Adicionar observador");
+            System.out.println("2. Remover observador");
+            System.out.println("3. Executar previsão do tempo");
+            System.out.println("0. Sair");
+
+            try {
+                opcao = scanner.nextInt();
+
+                switch (opcao) {
+                    case 1:
+                        System.out.println("Escolha o tipo de observador a ser adicionado:");
+                        System.out.println("1. Jornal");
+                        System.out.println("2. Aeroporto");
+                        System.out.println("3. Agricultor");
+
+                        int tipoObservador = scanner.nextInt();
+                        switch (tipoObservador) {
+                            case 1:
+                                previsaoTempo.adicionarObserver(new Jornal(previsaoTempo));
+                                System.out.println("Jornal adicionado.");
+                                break;
+                            case 2:
+                                previsaoTempo.adicionarObserver(new Aeroporto(previsaoTempo));
+                                System.out.println("Aeroporto adicionado.");
+                                break;
+                            case 3:
+                                previsaoTempo.adicionarObserver(new Agricultor(previsaoTempo));
+                                System.out.println("Agricultor adicionado.");
+                                break;
+                            default:
+                                System.out.println("Tipo de observador inválido.");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        System.out.println("Escolha o observador a ser removido:");
+                        for (Observer observer : previsaoTempo.getObservers()) {
+                            System.out.println(observer.getClass().getSimpleName());
+                        }
+                        String nomeObservador = scanner.next();
+                        for (Observer observer : previsaoTempo.getObservers()) {
+                            if (observer.getClass().getSimpleName().equals(nomeObservador)) {
+                                previsaoTempo.removerObserver(observer);
+                                System.out.println("Observador removido.");
+                                break;
+                            }
+                        }
+                        break;
+                    case 3:
+                        previsaoTempo.mudarEstado();
+                        break;
+                    case 0:
+                        System.out.println("Saindo...");
+                        break;
+                    default:
+                        System.out.println("Opção inválida.");
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println("Entrada inválida. Tente novamente.");
+                scanner.nextLine();
+                opcao = -1; // reinicializa opcao
+            }
+        } while (opcao != 0);
+
+        scanner.close();
+    }
+}

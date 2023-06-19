@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Currículo Guilherme Kameoka</title>
+
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            // seleciona elementos h2
+            const subtitulos = document.querySelectorAll("h2");
+            for (let subtitulo of subtitulos) {
+                // adiciona evento de clique
+                subtitulo.addEventListener("click", function () {
+                    // seleciona o próximo elemento (artigo) e altera a visibilidade
+                    const artigo = subtitulo.nextElementSibling;
+                    artigo.style.display = "none";
+                });
+
+                // adiciona evento de clique duplo
+                subtitulo.addEventListener("dblclick", function () {
+                    // seleciona o próximo elemento (artigo) e altera a visibilidade
+                    const artigo = subtitulo.nextElementSibling;
+                    artigo.style.display = "block";
+                });
+            }
+        };
+
+    </script>
+
+    <main>
+        <img src="images/avatar.png" alt="Avatar" height="120" width="120">
+        <h1>Guilherme Rimoldi Kameoka</h1>
+
+        <section>
+            <h2>Perfil</h2>
+            <article id="esconder">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat tempore dicta consequatur laborum
+                    doloremque
+                    ad
+                    aliquam quos magnam ipsa! Quasi dignissimos fuga eveniet ex rem suscipit dolore, libero
+                    provident
+                    perferendis.
+                </p>
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum quam, sunt culpa pariatur
+                    consectetur
+                    officia
+                    voluptate excepturi facilis iure minima ex, omnis vero! Sint tenetur, enim nostrum aspernatur
+                    sunt
+                    esse!
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Principais Competências</h2>
+            <ul>
+                <li>Programador C#</li>
+                <li>Desenvolvimento <b>Front-End</b></li>
+                <li>Banco de Dados</li>
+                <li>Machine Learning</li>
+                <li>Data Science</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formação Acadêmica</h2>
+            <p>Graduando em Sistemas de Informação pela <a href="https://ufu.br/">Universidade Federal de Uberlândia</a>
+                e
+                Graduação em Engenharia Elétrica pela <a href="https://www5.usp.br/">Universidade de São Paulo</a></p>
+        </section>
+
+        <section>
+            <h2>Experiência Profissional</h2>
+            <ol>
+                <li>
+                    Empresa ABC (2015-2017)
+                    <ul>
+                        <li>Programação em C</li>
+                        <li>Programação em VB</li>
+                    </ul>
+                </li>
+                <li>
+                    Empresa XYZ (2018-2021)
+                    <ul>
+                        <li>Desenvolvimento Front-End</li>
+                        <li>Desenvolvimento Back-End</li>
+                        <li>Desenvolvimento Mobile</li>
+                    </ul>
+                </li>
+            </ol>
+            <a href="experiencia.html">Veja as experiências profissionais em detalhes</a>
+        </section>
+
+        <section>
+            <h2>Contato</h2>
+            <table>
+                <tr>
+                    <td><img src="images/localizacao.png" alt="localizacao" height="30" width="30"></td>
+                    <td>
+                        <address>João Naves de Ávila, Santa Mônica, Uberlândia</address>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="images/tel.png" alt="tel" height="30" width="30"></td>
+                    <td><a href="tel:034-9999-9999">(34)9999-9999</a></td>
+                </tr>
+                <tr>
+                    <td><img src="images/mail.png" alt="email" height="30" width="30"></td>
+                    <td><a href="mailto:exemplo@exemplo.com">exemplo@exemplo.com</a></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

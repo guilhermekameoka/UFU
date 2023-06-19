@@ -1,0 +1,6 @@
+class Jornal implements Observer {
+    @Override
+    public void update(int temperatura, int umidade, boolean chuva, int velocidadeVento) {
+        System.out.println("Jornal: Previsão do tempo atualizada - temperatura: " + temperatura + " umidade: " + umidade + " chuva: " + chuva);
+    }
+}

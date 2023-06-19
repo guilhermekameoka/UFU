@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const exibir = document.getElementById('exibir');
+            const box = document.querySelector("#box");
+
+            function showMessage(mensagem) {
+                const nodeFirstP = document.querySelector("p");
+                nodeFirstP.textContent = mensagem;
+                box.style.visibility = 'visible';
+            }
+
+            exibir.addEventListener('click', function () {
+                showMessage('teste');
+            });
+
+            const fechar = document.querySelector("#fechar");
+            fechar.addEventListener('click', function () {
+                const box = document.querySelector("#box");
+                box.style.visibility = 'hidden';
+            });
+
+            const botao = document.querySelector("#altera");
+            botao.onclick = function () {
+                const nodeP = document.querySelector("p");
+                const novoConteudo = document.querySelector("input").value;
+                nodeP.textContent = novoConteudo;
+            };
+        });
+    </script>
+
+    <title>Trabalho 5 - Exerício 3</title>
+</head>
+
+<body>
+    <div id="box">
+        <p id="mensagem">Caixa de mensagem</p>
+        <button id="fechar">Ok</button>
+    </div>
+    <button id="exibir">Exibir mensagem</button>
+    <button id="altera">Alterar Conteúdo</button>
+    <input type="text">
+
+</body>
+
+</html>

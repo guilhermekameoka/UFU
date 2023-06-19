@@ -1,0 +1,34 @@
+package builder;
+
+public class Personagem {
+	   private String nome;
+	   private String profissao;
+	   private String arma;
+
+	   public Personagem(String nome, String profissao, String arma) {
+	      this.nome = nome;
+	      this.profissao = profissao;
+	      this.arma = arma;
+	   }
+
+	   public String getNome() {
+	      return nome;
+	   }
+
+	   public String getProfissao() {
+	      return profissao;
+	   }
+
+	   public String getArma() {
+	      return arma;
+	   }
+
+	   @Override
+	   public String toString() {
+	      return "Personagem criado: " + 
+	             "nome='" + nome + '\'' +
+	             ", profissao='" + profissao + '\'' +
+	             ", arma='" + arma + '\'';
+	   }
+	}
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rolagem Infinita</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #dedede;
+      font-family: Helvetica;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #888;
+    }
+
+    .item {
+      background-color: white;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .item-image {
+      width: 150px;
+      height: 150px;
+      margin: 0 2rem;
+    }
+
+    .item-name {
+      font: 2em Verdana;
+      color: #888;
+    }
+
+    .item-price {
+      font: 2em Verdana;
+      color: darkgreen;
+      margin-left: 2rem;
+    }
+
+    .item-price::before {
+      content: 'R$ ';
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="products">
+    <h2>Nossos produtos</h2>
+
+    <!-- O elemento template serve como um modelo para os itens de produtos -->
+    <template id="template">
+      <div class="item">
+        <!-- Exibe a imagem do produto -->
+        <img class="item-image" src="images/{{prod-image}}"></img>
+        <!-- Exibe o nome do produto -->
+        <span class="item-name">{{prod-name}}</span>
+        <!-- Exibe o preço do produto -->
+        <span class="item-price">{{prod-price}}</span>
+      </div>
+    </template>
+
+  </section>
+
+  <script>
+
+    // Carrega novos produtos
+    function renderProducts(newProducts) {
+
+      // Obtém produtos pelo ID
+      const prodsSection = document.getElementById("products");
+      // Obtém template pelo ID
+      const template = document.getElementById("template");
+
+      // Percorre cada produto novo e cria um bloco de HTML usando o modelo de template
+      for (let product of newProducts) {
+        // Substitui as tags de espaço reservado presentes no modelo de template pelos dados específicos do produto atual.
+        let html = template.innerHTML
+          .replace("{{prod-image}}", product.imagePath)
+          .replace("{{prod-name}}", product.name)
+          .replace("{{prod-price}}", product.price);
+
+        // Insere o HTML gerado no final da seção de produtos
+        prodsSection.insertAdjacentHTML("beforeend", html);
+      };
+    }
+
+    async function loadProducts() {
+
+      try {
+        // Faz uma requisição assíncrona para obter os produtos
+        let response = await fetch("more-products.php");
+
+        // Verifica o status da resposta
+        if (!response.ok) throw new Error(response.statusText);
+
+        // Converte a resposta para JSON
+        var products = await response.json();
+      }
+      catch (e) {
+        // Em caso de erro, exibe o erro no console e retorna
+        console.error(e);
+        return;
+      }
+
+      // Mostra os produtos
+      renderProducts(products);
+    }
+
+    // Executa a função loadProducts quando a janela é totalmente carregada
+    window.onload = function () {
+      loadProducts();
+    }
+
+    // A função window.onscroll é chamada quando o usuário rola a página
+    window.onscroll = function () {
+      // Verifica se o usuário chegou ao final da página
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        // Carrega mais produtos quando o usuário chega ao final da página
+        loadProducts();
+      }
+    };
+
+  </script>
+
+</body>
+
+
+
+</html>

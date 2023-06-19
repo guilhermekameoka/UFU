@@ -1,0 +1,10 @@
+class Agricultor implements Observer {
+    @Override
+    public void update(int temperatura, int umidade, boolean chuva, int velocidadeVento) {
+        if (chuva) {
+            System.out.println("Agricultor: Vai chover, devo proteger as plantações.");
+        } else {
+            System.out.println("Agricultor: Sem previsão de chuva, posso irrigar as plantações.");
+        }
+    }
+}

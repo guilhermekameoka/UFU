@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <main>
+        <div>
+            <label for="interesse">Interesse:</label>
+            <input type="text" id="interesse" name="interesse">
+        </div>
+        <ol>
+        </ol>
+
+    </main>
+
+    <script>
+
+        // no carregamento da página
+        window.onload = function () {
+            //seleciona o ID interesse
+            const campoInteresse = document.querySelector("#interesse");
+            campoInteresse.addEventListener("keyup", e => {
+                if (e.key === "Enter")
+                    adicionaInteresse();
+            });
+
+            function adicionaInteresse() {
+                //seleciona elementos de lista ordenada
+                const campoInteresse = document.querySelector("#interesse");
+                const listaInteresses = document.querySelector("ol");
+
+                //cria um novo li
+                const novoLi = document.createElement("li");
+                //cria um novo span
+                const novoSpan = document.createElement("span");
+                //cria um novo botao
+                const novoBotao = document.createElement("button");
+
+                //atribui o valor do campo interesse para o conteudo do span
+                novoSpan.textContent = campoInteresse.value;
+                novoBotao.textContent = '❌';
+
+                novoLi.appendChild(novoSpan);
+                novoLi.appendChild(novoBotao);
+                listaInteresses.appendChild(novoLi);
+
+                novoBotao.onclick = function () {
+                    listaInteresses.removeChild(novoLi);
+                }
+
+                //limpa o campo interesse
+                campoInteresse.value = '';
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

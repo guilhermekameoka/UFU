@@ -1,0 +1,18 @@
+class Agricultor implements Observer {
+    private Observable observable;
+
+    public Agricultor(Observable observable) {
+        this.observable = observable;
+        this.observable.addObserver(this);
+    }
+
+    @Override
+    public void update(int temperatura, int umidade, boolean chuva, int velocidadeVento) {
+        if (chuva) {
+            System.out.println("Agricultor - Chuva prevista, nao precisa irrigar as plantas.");
+        } else {
+            System.out.println("Agricultor - Sem chuva prevista, eh necessario irrigar as plantas.\n");
+            System.out.println("\n");
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <main>
+        <h1>Exemplo de uma pãgina modal</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id doloribus temporibus nihil commodi unde! Ea,
+            quaerat aspernatur quidem illum quo doloremque, molestias quam molestiae rerum aut optio ratione amet nemo.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic consequuntur debitis ea animi doloremque
+            repellendus, quidem delectus, cum sunt necessitatibus ipsam autem eligendi aspernatur, expedita soluta nihil
+            sit eos voluptas?</p>
+        <button type="button" id="btnOpenModal">Abrir Modal</button>
+    </main>
+
+    <div id="modalTeste" class="modal">
+        <div class="modalContent">
+            <h2>Olá, seja bem vindo!</h2>
+            <button class="buttonClose">Ok</button>
+        </div>
+    </div>
+
+    <script>
+        //ao carregar a página
+        window.onload = function () {
+            //irá selecionar a classe modal e o botao de fechar da janela modal
+            const modal = document.querySelector(".modal");
+            const buttonClose = modal.querySelector(".buttonClose");
+
+            //adiciona um listener para um click do mouse
+            buttonClose.addEventListener("click", function () {
+                //ao clicar, irá alterar a visibilidade no CSS
+                modal.style.display = 'none';
+            });
+            //seleciona o botao de abrir o modal
+            const buttonOpenModal = document.getElementById("btnOpenModal");
+            //ao clicar irá alterar a visibilidade no estilo CSS
+            buttonOpenModal.addEventListener("click", function () {
+                modal.style.display = 'block';
+            })
+        }
+
+    </script>
+</body>
+
+</html>

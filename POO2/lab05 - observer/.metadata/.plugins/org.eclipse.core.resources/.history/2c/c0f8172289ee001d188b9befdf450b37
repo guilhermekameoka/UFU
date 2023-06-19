@@ -1,0 +1,16 @@
+class Jornal implements Observer {
+    private Observable observable;
+
+    public Jornal(Observable observable) {
+        this.observable = observable;
+        this.observable.addObserver(this);
+    }
+
+    @Override
+    public void update(int temperatura, int umidade, boolean chuva, int velocidadeVento) {
+        System.out.println("Jornal - Previsão do tempo:");
+        System.out.println("Temperatura: " + temperatura + " graus Celsius");
+        System.out.println("Umidade: " + umidade + "%");
+        System.out.println("Chuva: " + (chuva ? "sim" : "não"));
+    }
+}

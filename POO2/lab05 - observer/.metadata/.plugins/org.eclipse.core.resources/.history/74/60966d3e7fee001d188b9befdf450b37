@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class PrevisaoTempo implements Observer {
+    private List<Observer> observers;
+    private int temperatura;
+    private int umidade;
+    private boolean chuva;
+    private int velocidadeVento;
+
+    public PrevisaoTempo() {
+        observers = new ArrayList<>();
+    }
+
+    public void mudarEstado() {
+        Random random = new Random();
+        temperatura = random.nextInt(40); // temperatura varia de 0 a 40 graus Celsius
+        umidade = random.nextInt(101); // umidade varia de 0 a 100 %
+        chuva = random.nextBoolean();
+        velocidadeVento = random.nextInt(61); // velocidade do vento varia de 0 a 60 km/h
+        notificarObservers();
+    }
+
+    public void adicionarObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removerObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    public void notificarObservers() {
+        for (Observer observer : observers) {
+            observer.atualizar(temperatura, umidade, chuva, velocidadeVento);
+        }
+    }
+
+    public int getTemperatura() {
+        return temperatura;
+    }
+
+    public int getUmidade() {
+        return umidade;
+    }
+
+    public boolean getChuva() {
+        return chuva;
+    }
+
+    public int getVelocidadeVento() {
+        return velocidadeVento;
+    }
+
+    @Override
+    public void atualizar(double temperatura, double umidade, boolean chuva, double velocidadeVento) {
+        this.temperatura = (int) temperatura;
+        this.umidade = (int) umidade;
+        this.chuva = chuva;
+        this.velocidadeVento = (int) velocidadeVento;
+        System.out.println("Informacoes meteorologicas atualizados.");
+    }
+}

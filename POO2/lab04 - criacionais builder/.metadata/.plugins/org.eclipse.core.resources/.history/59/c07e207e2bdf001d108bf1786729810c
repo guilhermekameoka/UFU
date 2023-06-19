@@ -1,0 +1,153 @@
+package builder;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        PersonagemBuilder personagemBuilder = new PersonagemBuilder();
+
+        System.out.println("Bem-vindo ao criador de personagens!");
+
+        boolean criandoPersonagem = true;
+
+        while (criandoPersonagem) {
+            System.out.println("O que você deseja fazer?");
+            System.out.println("1. Criar novo personagem");
+            System.out.println("2. Digitar nome");
+            System.out.println("3. Selecionar profissão");
+            System.out.println("4. Selecionar arma");
+            System.out.println("5. Selecionar item inicial");
+            System.out.println("6. Terminar de montar o personagem");
+            System.out.println("7. Batalhar contra um minotauro");
+            
+           
+            int opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+            case 1:
+                Personagem personagem = personagemBuilder.getPersonagem();
+                if (personagem != null) {
+                    System.out.println("Personagem criado:");
+                    System.out.println("Nome: " + personagem.getNome());
+                    System.out.println("Profissão: " + personagem.getProfissao());
+                    System.out.println("Arma: " + personagem.getArma());
+                    System.out.println("Item: " + personagem.getItem());
+                }
+                break;
+                case 2:
+                    System.out.println("Digite o nome do personagem:");
+                    String nome = scanner.nextLine();
+                    personagemBuilder.setNome(nome);
+                    break;
+                case 3:
+                    System.out.println("Selecione a profissão do personagem:");
+                    System.out.println("1. Guerreiro");
+                    System.out.println("2. Mago");
+                    System.out.println("3. Escudeiro");
+                    System.out.println("4. Cavaleiro");
+                    System.out.println("5. Arqueiro");
+                    System.out.println("6. Curandeiro");
+                    System.out.println("7. Samurai");
+                    System.out.println("8. Ninja");
+                    System.out.println("9. Duelista");
+                    int profissaoOpcao = scanner.nextInt();
+                    scanner.nextLine();
+                    if (profissaoOpcao == 1) {
+                        personagemBuilder.setProfissao("Guerreiro");
+                    } else if (profissaoOpcao == 2) {
+                        personagemBuilder.setProfissao("Mago");
+                    } else if (profissaoOpcao == 3) {
+                        personagemBuilder.setProfissao("Escudeiro");
+                    } else if (profissaoOpcao == 4) {
+                        personagemBuilder.setProfissao("Cavaleiro");
+                    } else if (profissaoOpcao == 5) {
+                        personagemBuilder.setProfissao("Arqueiro");
+                    } else if (profissaoOpcao == 6) {
+                        personagemBuilder.setProfissao("Curandeiro");
+                    } else if (profissaoOpcao == 7) {
+                        personagemBuilder.setProfissao("Samurai");
+                    } else if (profissaoOpcao == 8) {
+                        personagemBuilder.setProfissao("Ninja");
+                    } else if (profissaoOpcao == 9) {
+                        personagemBuilder.setProfissao("Duelista");
+                    } else {
+                        System.out.println("Opção inválida");
+                    }
+                    break;
+                case 4:
+                	System.out.println("Selecione a arma do personagem:");
+                    System.out.println("1. Espada");
+                    System.out.println("2. Arco e flecha");
+                    System.out.println("3. Cajado");
+                    System.out.println("4. Lança");
+                    System.out.println("5. Besta");
+                    System.out.println("6. Machado");
+                    System.out.println("7. Shuriken");
+                    System.out.println("8. Nunchaku");
+                    System.out.println("9. Katana");
+                    int armaOpcao = scanner.nextInt();
+                    scanner.nextLine();
+                    if (armaOpcao == 1) {
+                        personagemBuilder.setArma("Espada");
+                    } else if (armaOpcao == 2) {
+                        personagemBuilder.setArma("Arco e flecha");
+                    } else if (armaOpcao == 3) {
+                        personagemBuilder.setArma("Cajado");
+                    } else if (armaOpcao == 4) {
+                        personagemBuilder.setArma("Lança");
+                    } else if (armaOpcao == 5) {
+                        personagemBuilder.setArma("Besta");
+                    } else if (armaOpcao == 6) {
+                        personagemBuilder.setArma("Machado");
+                    } else if (armaOpcao == 7) {
+                        personagemBuilder.setArma("Shuriken");
+                    } else if (armaOpcao == 8) {
+                        personagemBuilder.setArma("Nunchaku");
+                    } else if (armaOpcao == 9) {
+                        personagemBuilder.setArma("Katana");
+                    } else {
+                        System.out.println("Opção inválida");
+                    }
+                    break;
+                case 5:
+                	 System.out.println("Selecione o item inicial do personagem:");
+                	    System.out.println("1. Poção de cura");
+                	    System.out.println("2. Poção de mana");
+                	    System.out.println("3. Armadura de couro");
+                	    System.out.println("4. Espada curta");
+                	    int itemOpcao = scanner.nextInt();
+                	    scanner.nextLine();
+                	    if (itemOpcao == 1) {
+                	        personagemBuilder.setItem("Poção de cura");
+                	    } else if (itemOpcao == 2) {
+                	        personagemBuilder.setItem("Poção de mana");
+                	    } else if (itemOpcao == 3) {
+                	        personagemBuilder.setItem("Armadura de couro");
+                	    } else if (itemOpcao == 4) {
+                	        personagemBuilder.setItem("Espada curta");
+                	    } else {
+                	        System.out.println("Opção inválida");
+                	    }
+                	    break;
+                case 6:
+                    Personagem personagem = personagemBuilder.build();
+                    System.out.println("Personagem criado:");
+                    System.out.println(personagem.toString());
+                    criandoPersonagem = false;
+                    break;
+                case 7:
+                    Minotauro minotauro = new Minotauro(40, 10, 5, "Minotauro");
+                    minotauro.batalhar();
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+        }
+
+        scanner.close();
+    }
+}

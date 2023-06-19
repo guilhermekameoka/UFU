@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+        PrevisaoTempo previsao = new PrevisaoTempo();
+        Jornal jornal = new Jornal(previsao);
+        Aeroporto aeroporto = new Aeroporto(previsao);
+        Agricultor agricultor = new Agricultor(previsao);
+        
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+        do {
+            System.out.println("Escolha uma opção:");
+            System.out.println("1 - Adicionar observador");
+            System.out.println("2 - Remover observador");
+            System.out.println("3 - Executar");
+            System.out.println("4 - Sair");
+            opcao = scanner.nextInt();
+            switch (opcao) {
+                case 1:
+                    System.out.println("Escolha um observador:");
+                    System.out.println("1 - Jornal");
+                    System.out.println("2 - Aeroporto");
+                    System.out.println("3 - Agricultor");
+                    int observador = scanner.nextInt();
+                    switch (observador) {
+                        case 1:
+                            previsao.addObserver(jornal);
+                            break;
+                        case 2:
+                            previsao.addObserver(aeroporto);
+                            break;
+                        case 3:
+                            previsao.addObserver(agricultor);
+                            break;
+                        default:
+                            System.out.println("Opção inválida.");
+                            break;
+                    }
+                    break;
+                case 2:
+                    System.out.println("Escolha um observador para remover:");
+                    System.out.println("1 - Jornal");
+                    System.out.println("2 - Aeroporto");
+                    System.out.println("3 - Agricultor");
+                    observador = scanner.nextInt();
+                    switch (observador) {
+                        case 1:
+                            previsao.removeObserver(jornal);
+                            break;
+                        case 2:
+                            previsao.removeObserver(aeroporto);
+                            break;
+                        case 3:
+                            previsao.removeObserver(agricultor);
+                            break;
+                        default:
+                            System.out.println("Opção inválida.");
+                            break;
+                    }
+                    break;
+                case 3:
+                    previsaoTempo.iniciar();
+                    break;
+                case 4:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+                    break;
+            }
+        } while (opcao != 4);
+        
+        scanner.close();
+    }
+}

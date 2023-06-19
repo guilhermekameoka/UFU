@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <a href="ex2-encadeamento-fetch.html">Exemplo ex2-encadeamento-fetch</a>
+    <h1>Explicação</h1>
+    <p>A função buscaClimaLocal é chamada quando a janela é carregada (window.onload)</p>
+    <p>Em seguida, uma requisição assíncrona é iniciada usando o método fetch, que faz uma chamada para a URL da API de
+        Geolocalização para obter informações sobre a localização do usuário</p>
+    <p>Após receber a resposta da primeira requisição, quatro métodos .then são encadeados para processar os dados</p>
+    <p>O primeiro método converte a resposta para o formato JSON. Em seguida, o segundo método utiliza as informações de
+        latitude e longitude obtidas para fazer outra requisição assíncrona, desta vez para a API Open-Meteo, que
+        fornece dados meteorológicos (temperatura e velocidade do vento)</p>
+    <p> Após receber a resposta da segunda requisição, o terceiro método .then converte os dados para o formato JSON</p>
+    <p>Em seguida, o quarto método .then extrai a temperatura e a velocidade do vento dos dados recebidos e atualiza o
+        conteúdo dos elementos HTML com os IDs "temp" e "wind"</p>
+    <p>No caso de ocorrer algum erro em qualquer um dos métodos .then, o método .catch será acionado e o erro será
+        exibido no console.</p>
+
+</body>
+
+</html>

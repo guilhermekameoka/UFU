@@ -1,0 +1,255 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(2, 4, 16);
+    position: relative;
+    margin: 0px;
+    padding-bottom: 50px;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.103);
+    display: block;
+    color: rgb(59, 85, 170);
+    border: 1px solid rgba(156, 156, 156, 0.068);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.103);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid rgba(156, 156, 156, 0.068);
+}
+
+footer img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    padding-right: 30px;
+}
+
+.menu {
+    color: #eee;
+    border-color: grey;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-bottom: 0;
+    margin-right: 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    top: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.menu a:visited {
+    color: lightgray;
+
+}
+
+.menu a:hover {
+    text-decoration: underline;
+
+}
+
+.botao-busca {
+    height: 13px;
+    width: 13px;
+
+}
+
+#barra-busca {
+    width: 300px;
+}
+
+.mainCadastro {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 125px;
+    background-color: rgba(255, 255, 255, 0.103);
+    padding: 30px;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    width: 450px;
+    height: 680px;
+    box-shadow: 5px 5px 20px rgb(146, 144, 144);
+}
+
+.mainCadastroAnuncio {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 125px;
+    background-color: rgba(255, 255, 255, 0.103);
+    padding: 30px;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    width: 450px;
+    height: 1000px;
+    box-shadow: 5px 5px 20px rgb(146, 144, 144);
+}
+
+.mainLogin {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 120px;
+    margin-bottom: 270px;
+    background-color: rgba(255, 255, 255, 0.103);
+    padding: 60px;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 5px 10px 20px rgb(146, 144, 144);
+}
+
+.h1Formulario {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(59, 85, 170);
+}
+
+.campoFormulario>span {
+    display: block;
+    color: red;
+    margin: 0px 0px 10px 0px;
+    font-size: 0.8rem;
+}
+
+.campoFormulario label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: lightgrey;
+    margin-top: 15px;
+}
+
+.campoFormulario input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333333;
+    box-sizing: border-box;
+    margin: 10px 0;
+    border: 1px solid #CCCCCC;
+}
+
+.campoFormulario input:focus {
+    outline: none;
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+    border: 3px solid rgb(84, 109, 194);
+}
+
+.botaoFormulario {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #3F51B5;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.botaoFormulario:hover {
+    background-color: #0c146e;
+
+}
+
+.anuncio {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.103);
+    color: lightgrey;
+    border: 1px solid rgba(156, 156, 156, 0.068);
+}
+
+.anuncio h1,
+h2 {
+    margin: 10px 0;
+}
+
+.anuncio img {
+    display: block;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+.anuncio p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.anuncio a {
+    color: lightgray;
+    font-weight: bolder;
+}
+
+.mainCards {
+    color: lightgrey;
+    text-align: center;
+    width: 100%;
+    padding: 20px 150px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 120px;
+
+}
+
+.card {
+    width: 100%;
+    margin: 0px;
+    border: 1px solid #aaaaaa52;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.103);
+}
+
+.card img {
+    width: 300px;
+    height: 300px;
+}
+
+.preco{
+    color:green;
+}
+
+.hiddenErro{
+    display: none;
+    color: red;
+}

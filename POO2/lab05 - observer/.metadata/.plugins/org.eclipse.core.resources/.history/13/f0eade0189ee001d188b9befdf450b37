@@ -1,0 +1,6 @@
+class Aeroporto implements Observer {
+    @Override
+    public void update(int temperatura, int umidade, boolean chuva, int velocidadeVento) {
+        System.out.println("Aeroporto: Alerta de mudança de vento - velocidade do vento: " + velocidadeVento);
+    }
+}

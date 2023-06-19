@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício 4</title>
+</head>
+
+<body>
+
+    <script>
+        window.onload = function () {
+            document.forms.formCadastro.onsubmit = validaForm;
+        }
+
+        function validaForm(e) {
+            let form = e.target;
+            let formValido = true;
+
+            const spanUsuario = form.usuario.nextElementSibling;
+            const spanSenha = form.senha.nextElementSibling;
+            const spanEmail = form.email.nextElementSibling;
+
+            spanUsuario.textContent = "";
+            spanSenha.textContent = "";
+            spanEmail.textContent = "";
+
+            if (form.usuario.value === "") {
+                spanUsuario.textContent = 'O usuário deve ser preenchido';
+                formValido = false;
+            }
+            if (form.senha.value === "") {
+                spanSenha.textContent = 'A senha deve ser preenchida';
+                formValido = false;
+            }
+            if (form.email.value === "") {
+                spanEmail.textContent = 'O email deve ser preenchido';
+                formValido = false;
+            }
+
+            if (!formValido) {
+                e.preventDefault();
+            }
+        }
+    </script>
+
+    <main>
+        <form name="formCadastro" action="action.php" method="post">
+
+            <div>
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario">
+                <span></span>
+            </div>
+
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha">
+                <span></span>
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <span></span>
+            </div>
+            <button>Cadastrar</button>
+        </form>
+    </main>
+
+</body>
+
+</html>

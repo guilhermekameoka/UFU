@@ -1,0 +1,66 @@
+import java.util.Random;
+
+public class Minotauro {
+
+
+    private int pontosDeVida;
+    private int forcaDeAtaque;
+    private int defesa;
+    private String nome;
+
+    public Minotauro(int pontosDeVida, int forcaDeAtaque, int defesa, String nome) {
+        this.pontosDeVida = pontosDeVida;
+        this.forcaDeAtaque = forcaDeAtaque;
+        this.defesa = defesa;
+        this.nome = nome;
+    }
+
+    public void batalhar() {
+        System.out.println("Você entrou na arena para lutar contra " + nome + "!");
+        System.out.println("Começa a batalha!");
+
+
+        Random random = new Random();
+
+
+        while (pontosDeVida > 0) {
+            int dano = forcaDeAtaque - defesa + random.nextInt(6) - 3;
+            boolean danoCritico = false;
+            if (random.nextDouble() < 0.1) {
+                danoCritico = true;
+                dano *= 2;
+            }
+            if (dano > 0) {
+                pontosDeVida -= dano;
+                System.out.println(nome + " sofreu " + dano + " de dano.");
+                if (danoCritico) {
+                    System.out.println("Foi um dano crítico!");
+                }
+            } else {
+                System.out.println(nome + " se defendeu do ataque.");
+            }
+            if (pontosDeVida <= 0) {
+                System.out.println(nome + " morreu!");
+            } else {
+                dano = random.nextInt(6) - 3;
+                danoCritico = false;
+                if (random.nextDouble() < 0.1) {
+                    danoCritico = true;
+                    dano *= 2;
+                }
+                if (dano > 0) {
+                    pontosDeVida -= dano;
+                    System.out.println(nome + " contra-atacou com " + dano + " de dano.");
+                    if (danoCritico) {
+                        System.out.println("Foi um dano crítico!");
+                    }
+                } else {
+                    System.out.println("Você se defendeu do ataque.");
+                }
+                if (pontosDeVida <= 0) {
+                    System.out.println("Você morreu!");
+                }
+            }
+        }
+    }
+}

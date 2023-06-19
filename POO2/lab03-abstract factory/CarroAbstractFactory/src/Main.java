@@ -1,0 +1,17 @@
+import factory.*;
+
+public class Main {
+    public static void main(String[] args) {
+        FabricaDeCarros fabricaChevrolet = new FabricaChevrolet();
+        CarroChevrolet carroChevrolet = new CarroChevrolet(fabricaChevrolet);
+        System.out.println(carroChevrolet.getDescricao());
+
+        FabricaDeCarros fabricaFiat = new FabricaFiat();
+        CarroFiat carroFiat = new CarroFiat(fabricaFiat);
+        System.out.println(carroFiat.getDescricao());
+
+        FabricaDeCarros fabricaFord = new FabricaFord();
+        CarroFord carroFord = new CarroFord(fabricaFord);
+        System.out.println(carroFord.getDescricao());
+    }
+}

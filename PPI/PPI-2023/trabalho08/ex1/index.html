@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    <h1>Exemplo 1</h1>
+    <p>Neste exemplo o método fetch está mostrando o resultado da próxima linha dos campos nome e telefone da tabela.
+    </p>
+    <p>O htmlspecialchars tem o objetivo de prevenir ataques do tipo XSS</p>
+    <p>No entanto, também deveria ter sido utilizado prepared statements para prevenir injeção SQL</p>
+
+    <h1>Exemplo 2</h1>
+    <p>Neste exemplo os campos "nome" e "telefone" estão sendo resgatados pelo método POST.</p>
+    <p>No entanto, foi utilizado o método exec, que é vunerável à injeção SQL e, portato, feito de maneira
+        inadequada.</p>
+    <p>No mostra-alunos.php está mostrando os nomes e telefones já cadastrados</p>
+
+    <h1>Exemplo 3</h1>
+    <p>O cadastro está sendo feito de maneira correta, armazenando a senha no BD por meio de um Hash e utilizando
+        prepared statements para maior segurança</p>
+    <p>O exclui cliente também está sendo feito de maneira correta, utilizando-se prepared statements</p>
+    <p>O método de excluir é responsável por deletar um CPF da tabela de clientes.</p>
+    <p>O mostra-clientes processa os dados e os mostra na forma de uma tabela</p>
+
+    <h1>Exemplo 4</h1>
+    <p>Neste exemplo está sendo feito a verificação dos credenciais do usuário para a efetivar o login</p>
+    <p>Foi utilizado o método prepared statements para prevenir injeção SQL</p>
+    <p>Se o e-mail for encontrado no BD, será feito a verificação da senha</p>
+    <p>Se o e-mail e a senha estiverem corretas, o usuário irá ser redirecionado para o home.html</p>
+
+    <h1>Exemplo 5</h1>
+    <p>Neste exemplo é feito o processo de transação, no qual ele faz a verificação em duas etapas</p>
+    <p>Se em qualquer das estapas houver alguma falha, ocorrerá um rollback e a transação não será concluída.</p>
+    <p>Caso contrário, a transação será concluída</p>
+</body>
+
+</html>

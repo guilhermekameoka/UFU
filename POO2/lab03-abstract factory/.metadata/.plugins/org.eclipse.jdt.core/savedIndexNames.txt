@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\Users\grkam\OneDrive\Área de Trabalho\lab03 teste\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1712534685.index
+676399691.index

@@ -1,0 +1,12 @@
+public class Aeroporto implements Observer {
+private PrevisaoTempo previsaoTempo;
+
+public Aeroporto(PrevisaoTempo previsaoTempo) {
+    this.previsaoTempo = previsaoTempo;
+    previsaoTempo.adicionarObserver(this);
+}
+
+public void atualizar() {
+    int velocidadeVento = previsaoTempo.getVelocidadeVento();
+    System.out.println("Aeroporto: Nova previsão do tempo - velocidade do vento: " + velocidadeVento + " km/h");
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clinica ABC Health - Aqui ate defunto ganha vida!">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Clinica ABC Health - Home</title>
+</head>
+
+<body>
+    <header>
+        <h1>Clínica ABC Health</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="cadastraCliente.php" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <div>
+                    <textarea id="somenteleitura" name="somenteleitura" rows="2" cols="70" readonly>
+                        Este é um campo somente leitura!
+                    </textarea>
+                </div>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required autofocus minlength="2" maxlength="50"
+                        placeholder="Digite seu nome...">
+                    <span></span>
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" id="cpf" name="cpf" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" required>
+                </div>
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div>
+                    <label for="datanasc">Data de nascimento:</label>
+                    <input type="date" id="datanasc" name="datanasc">
+                </div>
+
+                <fieldset>
+                    <legend>Sexo</legend>
+                    <div>
+                        <input type="radio" id="masculino" name="sexo" value="masculino">
+                        <label for="masculino">Masculino</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="feminino" name="sexo" value="feminino">
+                        <label for="feminino">Feminino</label>
+                    </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Estado Civil</legend>
+                    <div>
+                        <input type="radio" id="solteiro" name="estadocivil" value="solteiro">
+                        <label for="solteiro">Solteiro</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="casado" name="estadocivil" value="casado">
+                        <label for="casado">Casado</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <input type="hidden" name="teste" value="funcionou">
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Endereço</legend>
+                <div>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" required>
+                </div>
+                <div>
+                    <label for="logadouro">Logadouro:</label>
+                    <select id="logadouro" name="logadouro" required>
+                        <option value="">Selecione</option>
+                        <option value="rua">Rua</option>
+                        <option value="av">Avenida</option>
+                        <option value="praca">Praça</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" required>
+                </div>
+                <div>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+                <div>
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" required>
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Informações Adicionais</legend>
+                <div>
+                    <input type="checkbox" id="filmes" name="filmes" value="filmes">
+                    <label for="filmes">Filmes</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="informatica" name="informatica" value="informatica">
+                    <label for="informatica">Informática</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="games" name="games" value="games">
+                    <label for="games">Games</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="livros" name="livros" value="livros">
+                    <label for="livros">Livros</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="roupas" name="roupas" value="roupas">
+                    <label for="roupas">Roupas</label>
+                </div>
+                <div>
+                    <label for="info">Informações Complementares:</label>
+                    <textarea id="info" name="infocomplementar" rows="5" cols="80">
+                    </textarea>
+                </div>
+                <div>
+                    <label for="doc">Selecione uma imagem:</label>
+                    <input type="file" accept="image/*" id="doc" required>
+                    <span></span>
+                </div>
+            </fieldset>
+            <button>Enviar</button>
+        </form>
+
+    </main>
+
+    <footer>
+        <address>Av. João Naves de Ávila, Santa Mônica, Uberlândia</address>
+    </footer>
+</body>
+
+</html>
