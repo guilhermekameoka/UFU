@@ -47,3 +47,5 @@ public class Pastel implements Comida,Serializable {
          System.out.println("Pastel de " + recheio + " tamanho " + tamanho);
     }
 }
+    }
+}

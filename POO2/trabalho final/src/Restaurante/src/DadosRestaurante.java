@@ -19,9 +19,8 @@ public class DadosRestaurante {
             if(comidas.get(i) instanceof ComidaDecorator){
             System.out.print("Com adicionais: ");
             comidas.get(i).MostrarAdicionais();
-             System.out.println("");
         }
-         System.out.println("");
+        System.out.println("");
         }
     }
     
