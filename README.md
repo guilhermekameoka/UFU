@@ -1,2 +1,2 @@
 ## Repositório UFU
-Repositório dedicado às disciplinas da UFU
+Repositório dedicado para as disciplinas da UFU
