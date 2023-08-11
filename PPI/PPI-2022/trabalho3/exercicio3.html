@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+    <style>
+        nav button {
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            background-color: inherit;
+            height: 30px;
+            margin: 0;
+        }
+
+        nav button:hover {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        button.buttonActive {
+            font-weight: bold;
+            color: blue;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.tabActive {
+            display: block;
+        }
+
+        body {
+            margin: 0;
+            background-color: lightgray;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            color: darkblue;
+            margin: 0
+        }
+
+        ul {
+            background-color: white;
+            margin: 0;
+        }
+
+        li {
+            display: inline;
+        }
+
+        nav {
+            text-align: center;
+            margin: auto;
+            padding-bottom: 1%;
+            font-size: 14px;
+
+        }
+
+        main {
+            background-color: white;
+            width: 70%;
+            margin: auto;
+            padding: 10px;
+            box-shadow: 0 0 5px black;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Faculdade de Computação</h1>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><button data-tabname="BCC">Ciência da Computação</button>|</li>
+            <li><button data-tabname="BSI">Sistemas de Informação</button>|</li>
+            <li><button data-tabname="MEST">Mestrado</button>|</li>
+            <li><button data-tabname="DOUT">Doutorado</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="tabs">
+            <section data-tabname="BCC">
+                <h2>Bacharelado em Ciências da Computação</h2>
+                <p>O Curso de Bacharelado em Ciência da Computação é o marco inicial da Faculdade de Computação. Foi
+                    criado em 1988 e teve o seu reconhecimento em 11 de fevereiro de 1993 por meio da Portaria 181/93 do
+                    MEC. O objetivo do Curso é formar profissionais da área de Informática com competência no
+                    desenvolvimento de software, atendendo adequadamente as exigências de mercado de trabalho, além de
+                    capacitar o egresso a concluir com sucesso programas de pós-graduação.</p>
+                <p>Os egressos do curso têm obtido grande êxito na realização profissional, destacando, um considerável
+                    número de empresas pertencentes à ex-alunos do curso; um grande número de alunos que ingressam em
+                    consolidados cursos de pós-graduação no país e exterior; atuação significativa de nossos ex-alunos
+                    em atividades de ensino e pesquisa em instituições de ensino de nível superior; e outros tantos que
+                    atuam em grandes empresas nacionais e multinacionais.</p>
+                <p>O Curso conta com um corpo docente altamente qualificado de diversas unidades da Universidade Federal
+                    de Uberlândia, com destaque para a Faculdade de Computação.</p>
+            </section>
+
+            <section data-tabname="BSI">
+                <h2>Bacharelado em Sistemas de Informação</h2>
+                <p>O Curso de Bacharelado em Sistemas de Informação foi criado no ano de 2009 e teve o seu
+                    reconhecimento em 31 de Maio de 2013 por meio da Portaria 248/13 do Ministério da Educação.<br>
+                <p>O Objetivo do Curso é preparar profissionais com sólida e ampla formação técnica na área de
+                    tecnologia da informação aplicada às organizações; Desenvolver discentes empreendedores, capazes de
+                    projetar, implementar e gerenciar a infraestrutura de tecnlogia da informação envolvendo
+                    computadores, comunicação e dados em sistemas organizacionais; Consolidar um profissional cidadão,
+                    com competências - conhecimentos, habilidades e atitudes - e com responsabilidade social, capaz de
+                    respeitar as diferenças individuais, saber produzir e usar a tecnologia em benefício da sociedade e
+                    com visão sistêmica de negócios.</p>
+                <p>A Graduação conta com um corpo docente altamente qualificado de diversas Unidades da Universidade
+                    Federal de Uberlândia, com destaque para a Faculdade de Computação.</p>
+            </section>
+
+            <section data-tabname="MEST">
+                <h2>Mestrado em Ciências da Computação</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus facere porro odio maxime quos!
+                    Possimus tenetur quidem libero vitae perferendis quas vero, rerum dolore sunt. Officiis reiciendis
+                    suscipit maxime. Numquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                    exercitationem quae voluptates numquam nobis cumque facere pariatur ullam nihil consequuntur
+                    distinctio corrupti, tenetur porro deserunt, est maiores explicabo vel consequatur?</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus voluptate odit quasi ea. Reiciendis
+                    labore obcaecati architecto distinctio corporis iste numquam quisquam accusamus explicabo quae,
+                    facilis nihil laboriosam dolores molestiae?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus nulla deserunt ab harum repudiandae dicta alias dolorum tempore nostrum ut voluptatem unde a,
+                    maxime eligendi ea quibusdam possimus dolore atque!Lorem.</p>
+            </section>
+
+            <section data-tabname="DOUT">
+                <h2>Doutorado em Ciências da Computação</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit aliquid, sunt dolorem
+                    totam vitae modi fuga natus hic perspiciatis ullam fugit velit ex iure nobis at nam? Veritatis,
+                    quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci iure, rerum quasi tenetur
+                    ea esse velit. Tenetur, quas blanditiis ex ullam accusamus commodi ipsam, beatae quidem architecto,
+                    doloribus aspernatur! Adipisci!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, iste enim libero perspiciatis
+                    autem ad dolore ratione nisi nihil molestias fugit quasi, beatae, magnam reprehenderit repudiandae!
+                    Voluptas exercitationem eligendi assumenda. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Inventore, facere voluptatibus est repellendus ex architecto. Voluptate vero hic harum, sint magnam
+                    explicabo obcaecati aliquam quos facere distinctio cum perferendis doloremque? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Quae nisi dolorem impedit cumque asperiores sed assumenda
+                    voluptates inventore molestiae! Delectus laboriosam hic in beatae tenetur modi magnam laudantium
+                    eius molestias!</p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <script>
+        window.onload = function () { // A funcão vai ser carregada ao abrir a página
+            buttons = document.querySelectorAll("nav button");  // Seleciona todos os botões nav
+            for (let button of buttons) { // Atribui a função openTab para os botões
+                button.onclick = () => openTab(button.dataset.tabname);
+            }
+            openTab("BCC"); // a aba de Ciência da computação será a aba que estará aberta inicialmente ao carregar a página
+        }
+
+        function openTab(tabName) { // função responsável por abrir as outras abas
+
+            const lastTabActive = document.querySelector(".tabActive"); // Vai selecionar a aba a ser aberta
+            if (lastTabActive !== null) {   // Caso uma aba já esteja aberta ela será limpa
+                lastTabActive.className = "";
+            }
+            const lastButtonActive = document.querySelector(".buttonActive");   //Ativa o botão
+            if (lastButtonActive !== null) {    // se já estiver ativo será desativado
+                lastButtonActive.className = "";
+            }
+            const query1 = ".tabs > section[data-tabname='" + tabName + "']"; // define a aba a ser aberta
+            const query2 = "nav button[data-tabname='" + tabName + "']";    // define o botão a ser ativo
+
+            document.querySelector(query1).className = "tabActive"; // altera a classe da guia para CSS
+            document.querySelector(query2).className = "buttonActive";  //altera a classe do botao para o CSS
+
+        }
+
+    </script>
+</body>
+
+</html>

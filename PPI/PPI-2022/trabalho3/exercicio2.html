@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+    <style>
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(196, 196, 196);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        ol {
+            width: 70%;
+            margin: auto;
+        }
+
+        li {
+            margin-top: 2px;
+            padding: 5px 5px 5px 5px;
+            background-color: rgb(180, 219, 252);
+            border: 1px solid rgb(70, 67, 212);
+            border-radius: 5px;
+        }
+
+        li>button {
+            font-size: smaller;
+            float: right;
+            color: red;
+            border: none;
+            background-color: rgb(180, 219, 252);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="interesse">Interesse:</label>
+        <input type="text" id="interesse" name="interesse">
+        <ol>
+        </ol>
+    </div>
+    <script>
+        window.onload = function () { //Carrega a função ao carregar a página
+            const campoInteresse = document.querySelector("#interesse"); // Campo de interesse
+            campoInteresse.addEventListener("keyup", e => { //acrecenta um observador no input
+                if (e.key === "Enter") { // a função AdicionaInteresse é ativada quando o usuário apertar enter
+                    adicionaInteresse();
+                }
+            });
+
+        }
+
+        function adicionaInteresse() {
+            const campoInteresse = document.querySelector("#interesse"); // elemento campo 
+            const listaInteresses = document.querySelector("ol"); // elemento lista 
+            const novoLi = document.createElement("li"); // Adiciona um novo elemento na lista
+            const novoSpan = document.createElement("span"); // Adiciona um novo elemento span
+            const novoBotao = document.createElement("button"); // Adiciona um botão de remoção
+
+            novoSpan.textContent = campoInteresse.value; // Atribui o valor do campo de span
+            novoBotao.textContent = 'X'; //Botão de remoção
+            novoLi.appendChild(novoSpan); // O span é adicionado ao li
+            novoLi.appendChild(novoBotao); // O botão é adicionado ao li
+            listaInteresses.appendChild(novoLi); // O li é adicionado ao ol
+            novoBotao.onclick = function () {
+                listaInteresses.removeChild(novoLi);
+            }
+            campoInteresse.value = ''; // Limpa o campo
+        }
+    </script>
+</body>
+
+</html>
