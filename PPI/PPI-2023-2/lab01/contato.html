@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo de Fulano de Tal</title>
+</head>
+
+<body>
+    <h2>Menu de Navegação</h2>
+    <nav>
+        <a href="index.html">Voltar para página principal</a>
+    </nav>
+
+    <img src="./assets/contato.png">
+    <p></p>
+
+    <form action="enviar.php" method="post">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required autofocus>
+
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email" required>
+
+            <label for="idade">Telefone:</label>
+            <input type="number" name="tel" id="tel" required>
+        </fieldset>
+        <p></p>
+        <fieldset>
+            <legend>Você é recrutador?</legend>
+            <input type="radio" name="sim" id="sim" value="sim" required>
+            <label for="sim">Sim</label>
+
+            <input type="radio" name="nao" id="nao" value="nao" required>
+            <label for="nao">Não</label>
+        </fieldset>
+        <p></p>
+        <fieldset>
+            <legend>Deixe uma mensagem</legend>
+            <textarea name="mensagem" id="mensagem" cols="100" rows="10"></textarea>
+        </fieldset>
+
+        <p></p>
+        <button>Enviar</button>
+    </form>
+</body>
+
+</html>
