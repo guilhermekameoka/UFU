@@ -1,0 +1,48 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body {
+    background-color: rgb(30, 28, 32);
+    width: 60%;
+    margin: 0 auto;
+    padding: 2% 0
+}
+
+main {
+    border-radius: 10px;
+    background-color: white;
+    padding: 40px;
+}
+
+h1,
+h2,
+h3 {
+    color: rgb(75, 75, 145);
+    padding-top: 25px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+a:hover{
+    font-weight: bolder;
+}
+
+img{
+    padding-right: 10px;
+}
+
+.nome{
+    margin-left: 20px;
+}
+
+.foto{
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+li{
+    margin: 5px;
+}
