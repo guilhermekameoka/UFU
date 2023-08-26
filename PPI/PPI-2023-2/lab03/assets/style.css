@@ -1,0 +1,51 @@
+main{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 50%;
+    height: 10%;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 50px;
+    border: solid 1px grey;
+    box-shadow: 1px 10px 10px rgba(128, 128, 128, 0.616);
+}
+body{
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+input[hover]{
+    box-shadow: 12px 12px 12px 12px red;
+}
+
+form button{
+    width: 100%;
+}
+
+nav{
+    background-color: black;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(172, 172, 172)
+}
+
+nav #login{
+    display: flex;
+    flex-direction:row;
+    justify-content: end;
+}
