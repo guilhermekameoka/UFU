@@ -26,6 +26,7 @@ nav {
     gap: 25px;
     align-items: center;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 nav a {
@@ -65,4 +66,27 @@ form button {
 
 input:hover {
     box-shadow: 2px 2px rgba(0, 0, 0, 0.219);
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+}
+
+.item{
+    background-color: grey;
+    box-shadow: 3px 3px rgba(36, 36, 36, 0.849);
+    padding: 10px;
+
+    margin-bottom: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    gap: 20px;
+    max-width: 45%;
+}
+
+img{
+    box-shadow: 4px 4px;
 }
