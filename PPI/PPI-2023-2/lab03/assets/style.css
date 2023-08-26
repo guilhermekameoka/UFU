@@ -3,24 +3,19 @@ main{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-
-    width: 50%;
-    height: 10%;
-
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     padding: 50px;
     border: solid 1px grey;
     box-shadow: 1px 10px 10px rgba(128, 128, 128, 0.616);
 }
-body{
-
-}
 
 form{
     display: flex;
     flex-direction: column;
     justify-content:center;
+    width: 50%;
+    height: 10%;
 }
 
 input[hover]{
@@ -31,21 +26,24 @@ form button{
     width: 100%;
 }
 
-nav{
+nav {
     background-color: black;
     display: flex;
-    justify-content: start;
-    flex-direction: row;
+    justify-content: space-between;
+    gap:25px;
+    align-items: center;
     padding: 10px;
 }
 
-a{
+nav a {
     text-decoration: none;
-    color: rgb(172, 172, 172)
+    color: rgb(172, 172, 172);
 }
 
-nav #login{
-    display: flex;
-    flex-direction:row;
-    justify-content: end;
+nav a:hover{
+    font-weight: bolder;
+}
+
+#login {
+    margin-left: auto;
 }
