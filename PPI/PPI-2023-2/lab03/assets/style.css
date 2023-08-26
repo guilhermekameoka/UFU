@@ -1,8 +1,10 @@
-main{
+main {
+    /* postion */
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     padding: 50px;
@@ -10,19 +12,25 @@ main{
     box-shadow: 1px 10px 10px rgba(128, 128, 128, 0.616);
 }
 
-form{
+body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     width: 50%;
     height: 10%;
 }
 
-input[hover]{
-    box-shadow: 12px 12px 12px 12px red;
+input:hover {
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.219);
 }
 
-form button{
+form button {
     width: 100%;
 }
 
@@ -30,9 +38,9 @@ nav {
     background-color: black;
     display: flex;
     justify-content: space-between;
-    gap:25px;
+    gap: 25px;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
 }
 
 nav a {
@@ -40,7 +48,7 @@ nav a {
     color: rgb(172, 172, 172);
 }
 
-nav a:hover{
+nav a:hover {
     font-weight: bolder;
 }
 
