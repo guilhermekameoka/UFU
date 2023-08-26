@@ -17,6 +17,11 @@ body {
     padding: 0;
 }
 
+img {
+    box-shadow: 4px 4px;
+}
+
+
 
 /* menu navegacao */
 nav {
@@ -68,25 +73,118 @@ input:hover {
     box-shadow: 2px 2px rgba(0, 0, 0, 0.219);
 }
 
-.card{
+.card {
     display: flex;
     justify-content: center;
 }
 
-.item{
-    background-color: grey;
-    box-shadow: 3px 3px rgba(36, 36, 36, 0.849);
-    padding: 10px;
 
-    margin-bottom: 20px;
-    margin-left: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    gap: 20px;
-    max-width: 45%;
+/* medias */
+/* telas com resolucao maiores que 1000px */
+@media(width > 1000px) {
+    .item {
+        background-color: grey;
+        box-shadow: 3px 3px rgba(36, 36, 36, 0.849);
+        padding: 10px;
+
+        margin-bottom: 20px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+        max-width: 45%;
+    }
 }
 
-img{
-    box-shadow: 4px 4px;
+/* telas com resolucao até 1000px */
+@media(max-width: 1000px) {
+    .card {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .item {
+        background-color: grey;
+        box-shadow: 3px 3px rgba(36, 36, 36, 0.849);
+        padding: 10px;
+
+        margin-bottom: 20px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+        max-width: 90%;
+    }
+}
+
+/* telas com resolucao até 535px */
+@media(max-width:535px) {
+    .card {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .item {
+        background-color: grey;
+        box-shadow: 3px 3px rgba(36, 36, 36, 0.849);
+        padding: 10px;
+
+        margin-bottom: 20px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+        max-width: 90%;
+    }
+
+    nav {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 25px;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 20px;
+
+    }
+
+    nav #login{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .card {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .item {
+        background-color: grey;
+        box-shadow: 3px 3px rgba(36, 36, 36, 0.849);
+        padding: 10px;
+
+        margin-bottom: 20px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        max-width: 90%;
+    }
+
+    .item img {
+        box-shadow: 4px 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
 }
