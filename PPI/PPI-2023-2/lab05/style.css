@@ -19,3 +19,8 @@ h1{
 #login{
     margin: 25px;
 }
+
+#alerta{
+    display: none;
+    margin-top: 30px;
+}
