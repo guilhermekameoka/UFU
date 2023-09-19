@@ -1,0 +1,21 @@
+body{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+main{
+    border: solid grey 1px;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: rgb(200, 217, 223);
+}
+
+h1{
+    color:rgb(89, 123, 155);
+}
+
+#login{
+    margin: 25px;
+}
