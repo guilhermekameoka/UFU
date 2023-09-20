@@ -14,6 +14,10 @@ h1 {
     text-align: center;
 }
 
+input{
+    min-width: 120px;
+}
+
 #login {
     margin: 25px;
 }
