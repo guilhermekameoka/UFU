@@ -1,8 +1,8 @@
 function insereElemento() {
-  const novoElemento = document.criaElemento("div");
-  const novoItem = document.criaElemento("div");
-  const novaImagem = document.criaElemento("img");
-  const NovoParagrafo = document.criaElemento("p");
+  const novoElemento = document.createElement("div");
+  const novoItem = document.createElement("div");
+  const novaImagem = document.createElement("img");
+  const NovoParagrafo = document.createElement("p");
   
   novoElemento.classList.add("item");
   novaImagem.src = "https://br.web.img2.acsta.net/pictures/14/02/04/14/08/054280.jpg";
