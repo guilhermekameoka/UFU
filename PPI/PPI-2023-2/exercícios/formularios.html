@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+    <h1>Formulário</h1>
+
+    <form>
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <!-- type text -->
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" name="nome">
+
+            <label for="cpf">CPF: </label>
+            <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx">
+
+            <!-- type numer -->
+            <label for="idade">Idade: </label>
+            <input type="number" id="idade" name="idade">
+
+            <!-- select -->
+            <label for="estado">Estado: </label>
+            <select id="estado" name="estado" class="form-select">
+                <option value="">Selecione</option>
+                <option value="SP">SP</option>
+                <option value="MG">MG</option>
+                <option value="GO">GO</option>
+                <option value="AM">AM</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sexo</legend>
+            <!-- type radio -->
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" name="sexo" value="feminino">
+            <label for="feminino">Feminino</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Estado civil</legend>
+            <!-- type radio -->
+            <input type="radio" id="solteiro" name="estadoCivil" value="solteiro">
+            <label for="solteiro">Solteiro</label>
+
+            <input type="radio" id="casado" name="estadoCivil" value="casado">
+            <label for="casado">Casado</label>
+
+            <input type="radio" id="viuvo" name="estadoCivil" value="viuvo">
+            <label for="viuvo">Viúvo</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Interesses</legend>
+            <!-- type checkbox -->
+            <input type="checkbox" id="filmes" value="filmes">
+            <label for="filmes">Filmes</label>
+
+            <input type="checkbox" id="series" value="series">
+            <label for="series">Séries</label>
+
+            <input type="checkbox" id="desenhos" value="desenhos">
+            <label for="desenhos">Desenhos</label>
+
+            <input type="checkbox" id="jogos" value="jogos">
+            <label for="jogos">Jogos</label>
+
+            <!-- type text -->
+            <label for="nome">Outro: </label>
+            <input type="text" id="outro" name="outro">
+        </fieldset>
+
+        <fieldset>
+            <legend>Sobre mim</legend>
+            <!-- textarea -->
+            <textarea placeholder="Fale sobre você" rows="5" cols="50"></textarea>
+        </fieldset>
+
+        <button>Enviar</button>
+    </form>
+
+</body>
+
+</html>
