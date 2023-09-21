@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Palavras-chave</title>
+</head>
+
+<body>
+    <h1>Lista de Palavras-chave</h1>
+    <form id="keywordForm">
+        <input type="text" id="keywordInput" placeholder="Digite uma palavra-chave">
+        <button type="submit">Adicionar</button>
+    </form>
+    <ul id="keywordList">
+    </ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const keywordForm = document.getElementById("keywordForm");
+            const keywordInput = document.getElementById("keywordInput");
+            const keywordList = document.getElementById("keywordList");
+
+            keywordForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const keyword = keywordInput.value.trim();
+                if (keyword) {
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = `${keyword} <button class="removeBtn">X</button>`;
+                    keywordList.appendChild(listItem);
+
+                    keywordInput.value = "";
+
+                    listItem.querySelector(".removeBtn").addEventListener("click", () => {
+                        listItem.remove();
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
