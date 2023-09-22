@@ -1,0 +1,72 @@
+.logo{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+
+}
+
+#centro{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+}
+
+main{
+    margin-bottom: 200px;
+    
+}
+
+nav {
+    background-color:rgb(33,37,41);
+    display: flex;
+    justify-content:flex-start;
+    gap: 25px;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: solid 2px darkgrey;
+}
+
+nav a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+nav a:hover{
+    font-weight: bolder;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(33,37,41);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border: solid 2px darkgrey;
+}
+
+img{
+    height:220px;
+    width: 220px;
+    border: solid 1px black;
+}
+
+#item{
+    border: solid 2px grey;
+    margin: 10px;
+    background-color: lightgrey;
+    min-width: 250px;
+    max-width: 280px;
+}
+
+#alertaRaca,#alertaEspecie,#alertaCor, #alertaIdade, #alertaFilhote, #alertaPreco, #alertaDescricao {
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+}
+
