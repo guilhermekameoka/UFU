@@ -1,0 +1,146 @@
+/* formularios */
+input.form-control:focus,
+select.form-select:focus,
+input.form-check-input:checked {
+    border-color: rgb(158, 187, 158);
+    box-shadow: 0 0 0 0.2rem rgb(158, 187, 158);
+}
+
+/* ################# */
+
+
+
+/* cadastro */
+.cadastro {
+    background-color: rgb(105, 137, 138);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.cadastro input,
+.cadastro select {
+    margin-bottom: 5px;
+}
+
+.cadastro h3 {
+    color: rgb(214, 188, 160);
+    font-weight: bolder;
+    margin-bottom: 20px;
+
+}
+
+.cadastro button {
+    margin-top: 30px;
+}
+
+legend {
+    margin: 10px 0;
+    color: rgb(216, 194, 170);
+}
+
+#botao {
+    width: 100%;
+}
+
+/* ##################### */
+
+
+
+/* login */
+.paginaLogin {
+    margin: auto 10px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgb(105, 137, 138);
+}
+
+.paginaLogin input {
+    margin-bottom: 5px;
+}
+
+.paginaLogin h3 {
+    color: rgb(214, 188, 160);
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.labelLogin {
+    padding: 20px;
+    color: lightgrey;
+    margin-left: 10px;
+}
+
+/* ##################### */
+
+
+
+/* alertas */
+#alertaEmail,
+#alertaSenha,
+#alertaNome,
+#alertaCpf,
+#alertaDataNascimento,
+#alertaSexo,
+#alertaTelefone,
+#alertaRua,
+#alertaBairro,
+#alertaCidade,
+#alertaEstado,
+#alertaData,
+#alertaHorario,
+#alertaEspecialidade,
+#alertaRegpro,
+#alertaNomeProfissional,
+#alertaConvenio {
+    margin-top: 5px;
+    display: none;
+    color: red;
+}
+
+/*###################*/
+
+
+
+/* agenda/agendamento */
+.agendamento {
+    background-color: rgb(105, 137, 138);
+    margin: 15px auto;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.agendamento input {
+    margin-bottom: 10px;
+}
+
+.agendamento select {
+    margin-bottom: 10px;
+}
+
+.agendamento h2,
+.agendamento h3 {
+    color: rgb(214, 188, 160);
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.agendamento button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* ################### */
+
+
+
+/* pesquisa */
+#pesquisa input {
+    margin-bottom: 5px;
+}
+
+#pesquisa label {
+    color: silver;
+}
+
+/* ################# */
