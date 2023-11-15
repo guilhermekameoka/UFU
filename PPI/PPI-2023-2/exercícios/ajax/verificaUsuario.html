@@ -21,35 +21,38 @@
     </table>
     <button id="limparTabela">Limpar Tabela</button>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script>
-        $(document).ready(function () {
-            var tabela = $('#tabelaUsuarios').DataTable();
-
-            function carregarUsuarios() {
-                $.ajax({
-                    url: 'buscar_usuarios.php',
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (data) {
-                        tabela.clear().draw();
-                        if (!data.error) {
-                            data.forEach(function (usuario) {
-                                tabela.row.add([usuario.usuario]).draw(false);
-                            });
-                        } else {
-                            console.error('Erro ao buscar usuários:', data.error);
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('Erro na requisição AJAX:', error);
+        let tabela = null;
+    
+        function carregarUsuarios() {
+            $.ajax({
+                url: './backend/buscar_usuarios.php',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    tabela.rows().remove();
+                    if (!data.error) {
+                        tabela.rows.add(data.map(function (usuario) {
+                            return [usuario.usuario];
+                        })).draw(false);
+                    } else {
+                        console.error('Erro ao buscar usuários:', data.error);
                     }
-                });
-            }
+                },
+                error: function (erro) {
+                    console.error('Erro na requisição AJAX:', erro);
+                }
+            });
+        }
+    
+        $(document).ready(function () {
+            tabela = $('#tabelaUsuarios').DataTable();
             carregarUsuarios();
-            $('#limparTabela').click(function () {
+    
+            $('#limparTabela').on('click', function () {
                 carregarUsuarios();
             });
         });
