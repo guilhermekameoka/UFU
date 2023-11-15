@@ -33,7 +33,7 @@ try {
     $pdo->commit();
 
     // redireciona para a pagina com todos os cadastro registrados
-    header("location: mostraCadastro.php");
+    header("location: ../verificaUsuario.html");
     exit();
 
 } catch (Exception $e) {
