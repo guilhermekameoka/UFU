@@ -91,8 +91,9 @@ def calcula_pesos(documentos, indice_invertido):
                     pesos[termo] = {}
                 pesos[termo][doc] = tfidf
 
-                # Escreve o resultado no arquivo
-                file.write(f"doc{doc}: {termo}, {tfidf:.4f}\n")
+                # Escreve o resultado no arquivo apenas se tfidf for diferente de zero
+                if tfidf != 0:
+                    file.write(f"doc{doc}: {termo}, {tfidf:.4f}\n")
 
     return pesos
 

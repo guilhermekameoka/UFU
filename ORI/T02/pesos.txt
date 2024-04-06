@@ -1,6 +1,3 @@
-doc1: casa, 0.0000
-doc2: casa, 0.0000
-doc3: casa, 0.0000
 doc1: engracado, 1.0986
 doc1: nao, 0.5275
 doc2: nao, 0.4055
