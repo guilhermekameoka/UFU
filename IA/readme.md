@@ -1,6 +1,11 @@
 ## Primeiro trabalho de IA - Busca em profundidade
 O objetivo desse código é resolver o problema do viajante caixeirom, implementando o algorítimo de busca em profundidade. Dado um ponto de origem e destino, o programa retornará o percurso com a menor distância.
 
+## Como usar
+- Para achar a menor distância entre duas cidades, execute a consulta ```encontrar_caminho(Origem, Destino).```, trocando Origem e Destino por alguma das cidades do grafo.
+- Para listar todos os caminhos possíveis a partir de um nó de origem até um nó de destino pré-definido, execute: `buscar_todos_caminhos(Origem, Destino, Caminhos).`, substituindo a origem e o destino pelos desejados.
+
+
 ## Explicando o funcionamento
 Primeiramente precisamos defenir quais são as arestas do grafo.  
 O predicado `aresta` possui três argumentos (Origem, Destino, Distância).
@@ -168,6 +173,6 @@ Se a lista não for vazia, então obviamente existe pelo menos um caminho do nó
 menor_caminho(Caminhos, (MenorCaminho, MenorDistancia)),
 ```
 comparando todos os caminhos da lista `Caminhos` e suas distâncias totais. 
-   
+
 Mas, se a lista for vazia, então apenas irá mostrar na tela a mensagem que nenhum caminho foi encontrado.
 
