@@ -1,5 +1,5 @@
 ## Primeiro trabalho de IA - Busca em profundidade
-O objetivo desse código é resolver o problema do viajante caixeirom, implementando o algorítimo de busca em profundidade. Dado um ponto de origem e destino, o programa retornará o percurso com a menor distância.
+O objetivo desse código é resolver o problema do viajante caixeiro, implementando o algorítimo de busca em profundidade. Dado um ponto de origem e destino, o programa retornará o percurso com a menor distância.
 
 ## Como usar
 - Para achar a menor distância entre duas cidades, execute a consulta ```encontrar_caminho(Origem, Destino).```, trocando Origem e Destino por alguma das cidades do grafo.
