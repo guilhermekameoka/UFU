@@ -2,13 +2,19 @@
 O objetivo desse código é resolver o problema do viajante caixeiro, implementando o algorítimo de busca em profundidade. Dado um ponto de origem e destino, o programa retornará o percurso com a menor distância.
 
 ## Como usar
-- Para achar a menor distância entre duas cidades, execute a consulta ```encontrar_caminho(Origem, Destino).```, trocando Origem e Destino por alguma das cidades do grafo.
-- Para listar todos os caminhos possíveis a partir de um nó de origem até um nó de destino pré-definido, execute: `buscar_todos_caminhos(Origem, Destino, Caminhos).`, substituindo a origem e o destino pelos desejados.
+- Para achar a menor distância entre duas cidades, execute a consulta:
+```
+encontrar_caminho(Origem, Destino).
+```
+- Para listar todos os caminhos possíveis a partir de um nó de origem até um nó de destino pré-definido, execute a consulta:
+```
+buscar_todos_caminhos(Origem, Destino, Caminhos).
+```
+Substitua `Origem` e `Destino` por alguma das cidades do grafo.
 
 
 ## Explicando o funcionamento
-Primeiramente precisamos defenir quais são as arestas do grafo.  
-O predicado `aresta` possui três argumentos (Origem, Destino, Distância).
+Primeiramente precisamos definir quais são as arestas do grafo. O predicado `aresta` possui três argumentos (`Origem`, `Destino`, `Distância`).
 
 ```
 aresta(ribeirao_preto, uberaba, 170).  
@@ -39,9 +45,7 @@ aresta(sao_paulo, santos, 80).
 ```
 
 Cada linha desse trecho de código representa uma conexão direta entre duas cidades, junto com a distância em Km.  
-Então a distância entre Ribeirão Preto e Uberaba seria de 170 km.
-
->``aresta(ribeirao_preto, uberaba, 170).``
+Por exemplo, ``aresta(ribeirao_preto, uberaba, 170).`` indica que existe um caminho entre Ribeirão Preto e Uberaba, cuja distância é de 170 km.
 
 Em seguida foi definido que o grafo é não direcionado, ou seja, se dois nós estão conectados então é possível fazer tanto o caminho de ida quanto o de volta.
 
@@ -75,7 +79,9 @@ busca_profundidade(Inicio, Destino, [Inicio], Caminho, 0, Distancia).
 
 Ao final da execução do findall, a variável `Caminhos` irá conter todos os caminhos possíveis da origem até o destino, cada uma com sua respectiva distância. Então, se quisermos listar todos os caminhos possíveis além do menor de todos, podemos fazer a seguinte consulta:
 
-> ``busca_todos_caminhos(ribeirao_preto, uberaba, Caminhos).``
+```
+busca_todos_caminhos(ribeirao_preto, uberaba, Caminhos).
+```
 
 O predicado `busca_profundidade` possui duas abordagens diferentes:  
 - Caso Base: Define a condição de parada, ou seja, quando o destino for encontrado.
@@ -88,7 +94,7 @@ O predicado `busca_profundidade` possui duas abordagens diferentes:
     > - Visitados: Lista que mantém todos os nós visitados ao longo do caminho desde o início até o destino.
     > - Caminho: É o caminho completo do ponto de partida até o destino, armazenado como uma lista de nós na ordem correta. Durante a busca, a lista Visitados acumula os nós na ordem inversa porque o próximo nó visitado é sempre adicionado ao início da lista. Quando o destino é encontrado, usamos reverse para inverter essa lista e obter o caminho correto. 
     > - Distancia, Distancia: A distância acumulada percorrida até o nó de destino. No caso base, a distância acumulada (Distancia) é simplesmente passada para o resultado final, sem nenhuma modificação, pois o caminho está completo.  
-
+    
     Pode parecer redundante repetir os mesmos termos, mas nesse caso não é. A repetição dos parâmetros em Prolog tem um propósito específico de unificação.
     -  Em `Destino, Destino`, o primeiro termo é o parâmetro que está sendo comparado com o segundo. Só é verdadeiro se ambos os valores forem iguais. Nesse caso usamos para verificar se o ponto atual é o destino fianal.
     -  Em `Distancia, Distancia`, da mesma, isso verifica se a distância acumulada até o ponto atual (último ponto do caminho) é igual a distância final. Dessa forma podemos garantir que a distância final é a mesma da distância acumulada no caminho.  
