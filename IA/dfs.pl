@@ -47,7 +47,7 @@ buscar_todos_caminhos(Inicio, Destino, Caminhos) :-
     findall((Caminho, Distancia), busca_profundidade(Inicio, Destino, [Inicio], Caminho, 0, Distancia), Caminhos).
 
 % Caso base da busca em profundidade
-%	   				atual   fianal						 acumulada    fianal
+%	   				atual   final						 acumulada    final
 busca_profundidade(Destino, Destino, Visitados, Caminho, Distancia, Distancia) 
 	:- reverse(Visitados, Caminho).
 
