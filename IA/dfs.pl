@@ -42,9 +42,12 @@ aresta(sao_paulo, santos, 80).
 conectado(X, Y, D) :- aresta(X, Y, D).
 conectado(X, Y, D) :- aresta(Y, X, D).
 
-% Funcao principal que inicia a busca
+% Funcao principal que inicia a busca e printa na tela os caminhos conforme sao encontrados
 buscar_todos_caminhos(Inicio, Destino, Caminhos) :-
-    findall((Caminho, Distancia), busca_profundidade(Inicio, Destino, [Inicio], Caminho, 0, Distancia), Caminhos).
+    findall((Caminho, Distancia), 
+        (busca_profundidade(Inicio, Destino, [Inicio], Caminho, 0, Distancia),
+        write('Caminho encontrado: '), write(Caminho), write(' - Distancia: '), write(Distancia), write(' km'), nl), 
+        Caminhos).
 
 % Caso base da busca em profundidade
 %	   				atual   final						 acumulada    final
