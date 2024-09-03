@@ -7,7 +7,7 @@
 % Bruno Oliveira
 % Julio Cesar
 % Guilherme Kameoka
-% Carlos Livus
+% Carlos Livius
 % Vitor Yuji
 % Tais Damasceno
 
